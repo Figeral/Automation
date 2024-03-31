@@ -1,19 +1,19 @@
 name: first workflow automation
 on:
   push:
-    branch: ["master"]
+    branches: ["master"]
 
   commit:
-    branch: ["master"]
+    branches: ["master"]
 
   pull_request:
-    branch: ["master"]
+    branches: ["master"]
 
 jobs:
   build:
     runs-on: ubuntu-latest
 
     steps:
-      - name: greeting workflow
       - uses: actions/checkout@v3
+      - name: greeting workflow
       - run: echo "hello world"
