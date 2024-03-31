@@ -3,9 +3,7 @@ on:
   push:
     branches: ["master"]
 
-  commit_comment:
-    branches: ["master"]
-
+  
   pull_request:
     branches: ["master"]
 
