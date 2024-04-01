@@ -11,4 +11,4 @@ def send_mgs():
 
 
 if __name__ == "__main__":
-    send_mgs
+    send_mgs()
