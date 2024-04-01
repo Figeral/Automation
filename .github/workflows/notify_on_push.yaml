@@ -23,5 +23,5 @@ jobs:
         
       - name :  running script  
         run: |
-              python -m pip install request 
+              
               python3 .github/workflows/source/index.py
