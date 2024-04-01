@@ -8,7 +8,7 @@ on:
     branches: ["master"]
 
 jobs:
-  build:
+  notify:
     runs-on: ubuntu-latest
 
     steps:
@@ -25,6 +25,11 @@ jobs:
         run: |
               python3 -m pip install -r .github/workflows/requirements.txt
 
-      - name :  running script  
+      - name :  running script 
+        env:
+          TELEGRAM_BOT_TOKEN: ${{secrets.TELEGRAM_BOT_TOKEN}} 
+          USER_ID: ${{secrets.FITZ_ID}}
+          GITHUB_REPOSITORY: ${{github.repository}}
+          GitHUB_EVENT_AUTHOR: ${{github.event.pusher.username}}
         run: |
               python3 .github/workflows/source/index.py

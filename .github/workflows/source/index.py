@@ -1,11 +1,18 @@
 import requests
+import os
 
 
 def send_mgs():
-    token = "bot6544277286:AAHSPQdHgM8YIKVQM0fGJzXXN04iudE3pNg"
-    url = f"https://api.telegram.org/{token}/sendMessage"
-    user_id = 5429946779
-    msg = f"A {github.event.type} made by {github.event.sender.login}  ,  feel  free to edit it at {github.repository.html_url}"
+    token = os.environ['TELEGRAM_BOT_TOKEN']
+    user_id = os.environ['USER_ID']
+    repository = os.environ['GITHUB_REPOSITORY']
+    author = os.environ['GITHUB_EVENT_AUTHOR']
+
+    baseUrl = "https://api.telegram.org"
+    url = f"{baseUrl}/bot{token}/sendMessage"
+    link = f"github.com/Figeral/{repository}"
+
+    msg = f"A Pushed 🚀 made by {author} \n feel free to edit it at {link}"
     payload = dict(chat_id=user_id, text=msg)
     requests.post(url=url, params=payload)
 
