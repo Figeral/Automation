@@ -22,4 +22,5 @@ jobs:
 
       - name :  running script 
         run: |
-              python3 source/index.py
+              ls
+              python3 .github/workflows/source/index.py
