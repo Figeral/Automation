@@ -23,7 +23,7 @@ jobs:
 
       - name: Installing dependencies
         run: |
-              python3 -m pip install -r requirements.txt
+              python3 -m pip install -r .github/workflows/requirements.txt
 
       - name :  running script  
         run: |
