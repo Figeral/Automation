@@ -4,7 +4,7 @@ import os
 
 def send_mgs():
     token = os.environ['TELEGRAM_BOT_TOKEN']
-    user_id = os.environ['USER_ID']
+    user_id = 2123403309
     repository = os.environ['GITHUB_REPOSITORY']
     author = os.environ['GITHUB_EVENT_AUTHOR']
 
