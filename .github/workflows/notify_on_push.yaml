@@ -30,6 +30,6 @@ jobs:
           TELEGRAM_BOT_TOKEN: ${{secrets.TELEGRAM_BOT_TOKEN}} 
           USER_ID: ${{secrets.FITZ_ID}}
           GITHUB_REPOSITORY: ${{github.repository}}
-          GITHUB_EVENT_AUTHOR: ${{github.event.sender}}
+          GITHUB_EVENT_AUTHOR: ${{github.event.sender.login}}
         run: |
               python3 .github/workflows/source/index.py
